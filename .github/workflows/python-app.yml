@@ -16,6 +16,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: DEV
 
     steps:
     - uses: actions/checkout@v4
@@ -37,3 +38,5 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: Print DEV secret
+      run: echo "The secret is ${{ secrets.MY_SECRET }}"
